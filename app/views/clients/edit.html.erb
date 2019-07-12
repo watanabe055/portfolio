@@ -1,0 +1,12 @@
+<h1>マイページ</h1>
+<%= form_for @user,:url => {:action => :update} do |f| %>
+	<h3>ユーザ名</h3>
+	<%= f.text_field :name, placeholder:"2文字以上20文字以内", size: "30*30" %>
+	<h3>メールアドレス</h3>
+	<%= f.text_field :email, size: "30*30" %>
+	<h3>プロフィール画像</h3>
+	<%= f.attachment_field :profile_image %>
+	<div>
+		<%= f.submit 'Update User' , class: "btn btn-outline-success" %>
+	</div>
+<% end %>
