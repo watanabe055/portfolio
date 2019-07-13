@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if current_user.try(:admin?)
     	rails_admin_path
     else
-    	client_path(:id)
+    	client_path(resource)
     end
   end
 

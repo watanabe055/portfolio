@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
+  get "clients/:id" => "client#show" #ログイン後マイページへ行く
 
   get 'homes/top'
   get 'homes/about'
