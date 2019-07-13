@@ -7,7 +7,7 @@ class User < ApplicationRecord
   attachment :profile_image
 
   validates :email, presence: true, length: { in: 5..50}
-  validates :name, presence: true, length: { in: 2..20}
+  #validates :name, presence: true, length: { in: 2..20}
 
    def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
