@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :clients, only: [:show, :edit, :update, :index, :destroy]
-  get "clients/:id" => "client#show" #ログイン後マイページへ行く
-
   get 'homes/top'
   get 'homes/about'
+  resources :clients, only: [:show, :edit, :update, :index, :destroy]
+  get "clients/:id" => "client#show"
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get '/users', to: redirect("/users/sign_up")#sign_upの更新遷移防止
+
+  resources :rooms, only: %i[new show]
 
   root 'homes#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

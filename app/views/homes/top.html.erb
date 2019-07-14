@@ -1,2 +1,18 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<body class="top_body">
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+	<div id='title'>
+		<span class="top-word">Let me fill</span>
+		<br>
+	  	<span class="top-word">the gap</span>
+	 	<br>
+	 	<span class="top-word">in your soul.</span>
+	 	<div class="top-items">
+	 		<%= link_to "使い方", homes_about_path, class: "btn-square" %>
+	 		<%= link_to "ログイン", new_user_session_path, class: "btn-square" %>
+	 		<%= link_to "新規登録", new_user_registration_path, class: "btn-square" %>
+	 	</div>
+	</div>
+</body>
