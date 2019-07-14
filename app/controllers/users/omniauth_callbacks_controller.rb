@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  
+
   def facebook
     callback_from :facebook
   end
@@ -21,6 +21,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+  
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
