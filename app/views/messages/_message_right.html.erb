@@ -1,9 +1,9 @@
 <div class="message">
   <div class="kaiwa">
     <figure class="kaiwa-img-right">
-      <%= image_tag 'default.jpg' %>
+      <%= attachment_image_tag current_user,  :profile_image, :fill, 100, 100, format: 'jpeg' ,fallback: "noimage.jpg" ,size: "100*100" %>
       <figcaption class="kaiwa-img-description">
-        <%= message.user.email %>
+        <%= message.user.name %>
       </figcaption>
     </figure>
     <div class="kaiwa-text-right">

@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <h2>Let me fill the gap in your soul.</h2>
+    <% if current_user.try(:admin?) %>
+      <li>
+        <%= link_to "マイページ", client_path(current_user.id) %>
+      </li>
+    <% elsif current_user %>
+      <li>
+        <%= link_to "マイページ", client_path(current_user.id) %>
+      </li>
+      <li>
+        <%= link_to "チャットルーム一覧", rooms_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+      <% else %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
