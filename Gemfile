@@ -83,3 +83,6 @@ gem 'omniauth-facebook'
 #画像
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+#検索
+gem 'ransack'
