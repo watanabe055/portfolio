@@ -5,6 +5,7 @@
       <%= f.submit "検索" %>
     <% end %>
     <% @rooms.each do |room| %>
+      <li><%= room.messages.count %></li>
       <li><%= room.category %></li>
       <li><%= link_to room.title, room_path(room) %></li>
       <li><%= room.detail %></li>
