@@ -86,3 +86,7 @@ gem "refile-mini_magick"
 
 #検索
 gem 'ransack'
+
+#グラフ化
+gem 'chartkick'
+gem 'chartable'

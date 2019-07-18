@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categorise/index'
+  get 'categorise/show'
   get 'homes/top'
   get 'homes/about'
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
