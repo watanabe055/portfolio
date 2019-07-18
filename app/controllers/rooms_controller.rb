@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
 
   def index
-    
+    @room = Room.all
     @q = Room.ransack(params[:q])
     @rooms = @q.result(distinct: true)
   end
@@ -23,6 +23,6 @@ class RoomsController < ApplicationController
 
   private
     def room_params
-        params.require(:room).permit(:title , :detail)
+        params.require(:room).permit(:title , :detail, :category)
     end
 end
