@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :authenticate_user!
+   before_action :authenticate_user!, only: [:index, :edit]
 
   def correct_user #url直打ち防止
       @user = current_user.find_by(id: params[:id])
@@ -33,8 +33,16 @@ class ClientsController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    redirect_to homes_top_path
+    @message =Message.find(params[:id])
+
+    if @message.nil?
+      @user.destroy
+      redirect_to homes_unsubscribe_path
+    else
+      @message.destroy
+      @user.destroy
+      redirect_to homes_unsubscribe_path
+    end
   end
 
 	private

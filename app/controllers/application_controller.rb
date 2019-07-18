@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    homes_top_path
+    homes_unsubscribe_path
   end
 end

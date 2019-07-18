@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'categorise/index'
-  get 'categorise/show'
+  #get 'categorise/index'
+  #get 'categorise/show'
   get 'homes/top'
   get 'homes/about'
+  get 'homes/unsubscribe'
+
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
   get "clients/:id" => "client#show"
   

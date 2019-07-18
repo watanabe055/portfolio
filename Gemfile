@@ -79,6 +79,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 #画像
 gem "refile", require: "refile/rails", github: 'manfe/refile'

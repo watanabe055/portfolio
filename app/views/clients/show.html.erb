@@ -2,12 +2,12 @@
 <%= attachment_image_tag @user,  :profile_image, :fill, 200, 200, format: 'jpeg' ,fallback: "noimage.jpg" ,:size =>'200x200', class: "user-image" %>
 <h3>ユーザ名</h3>
 	<h5><%= @user.name %></h5>
-<h3>メールアドレス</h3>
+<% if @user == current_user %>
+	<h3>メールアドレス</h3>
 	<h5><%= @user.email %></h5>
-<div>
-	<% if @user == current_user %>
-	<%= link_to"ユーザ情報編集", edit_client_path, class: "btn btn-outline-info" %>
-	<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
-	<%= link_to"退会", destroy_user_session_path, method: :delete, "data-confirm" => "退会しますか？", class: "btn btn-outline-danger"%>
+	<div>
+		<%= link_to"ユーザ情報編集", edit_client_path, class: "btn btn-outline-info" %>
+		<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
+		<%= link_to"退会", destroy_user_session_path, method: :delete, "data-confirm" => "退会しますか？", class: "btn btn-outline-danger"%>
 	<% end %>
 </div>
