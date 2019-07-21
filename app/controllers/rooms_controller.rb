@@ -16,9 +16,13 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_params)
-    @room.save
-    redirect_to @room
+     @room = Room.new(room_params)
+     if @room.save
+      redirect_to @room
+    else
+      flash.now[:notice] = "入力が正しくありません"
+      render "rooms/new"
+    end
   end
 
   private
