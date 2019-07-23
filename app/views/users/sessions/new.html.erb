@@ -1,26 +1,50 @@
-<h2>Log in</h2>
+<div class="big-big1">
+  <div class="big-box">
+    <div class="my-info-box ">
+      <h3 class="ribbon new-room">ログイン</h3>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <!-- ログイン　入力フォーム -->
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", size: "60*60", class: "info-text" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password", size: "60*60", class: "info-text" %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="my-info-botton">
+          <%= f.submit "ログイン", class: "btn btn-lg btn-block btn-outline-success" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+  <!-- SNSログイン -->
+  <div class="log-icon-box">
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <div class="btn-social-long-google">
+        <i class="fab fa-google log-icon"></i><span class="log-logo">Google</span>
+      </div>
+    <% end %>
+
+    <%= link_to user_facebook_omniauth_authorize_path do %>
+      <div class="btn-social-long-facebook">
+        <i class="fab fa-facebook-square log-icon"></i><span class="log-logo">facebook</span>
+      </div>
+    <% end %>
+
+    <%= link_to user_line_omniauth_authorize_path do %>
+      <div class="btn-social-long-line">
+        <i class="fab fa-3x fa-line log-icon"></i><span class="log-logo">LINE</span>
+      </div>
+    <% end %>
+  </div>
+</div>

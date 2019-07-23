@@ -80,6 +80,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-line'
 
 #画像
 gem "refile", require: "refile/rails", github: 'manfe/refile'

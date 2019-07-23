@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  
+  devise_scope :user do
+    post 'users/sign_up/confirm' => 'users/registrations#confirm'
+    post 'users/sign_up/complete' => 'users/registrations#complete'
+  end
 
   resources :rooms, only: [:new,  :show, :index, :create]
 

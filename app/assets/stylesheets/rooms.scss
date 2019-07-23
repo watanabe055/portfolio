@@ -178,16 +178,17 @@ p.kaiwa-text:last-child {
   margin-top: 15px;
 }
 
-
+/* 入力フォム系*/
 .big-box{
   width: 60%;
   text-align: center;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  height: 100%;
+  height: auto;
   color: #5989cf;
-  background: #a4d7e1;
+  opacity: 0.8;
+  background: #daf1f9;
   border-bottom: solid 6px #aac5de;
   border-radius: 9px;
 }

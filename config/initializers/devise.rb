@@ -232,7 +232,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -297,6 +297,7 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   
+  config.omniauth :line, LINE_ID='1601062080', LINE_SECRET_KEY='3910f99b058d602b791d2e110ab2abbc'
   config.omniauth :facebook, FACEBOOK_ID='350106688977017', FACEBOOK_SECRET_KEY='2d84efbca571a3ac6e75e0fd26b418d1'
-  config.omniauth :google_oauth2, GOOGLE_CLIENT_ID='596815470307-mmnv3ln9hc7lc7gnnrh7n08njrdmjhcm.apps.googleusercontent.com', GOOGLE_CLIENT_SECRET='Atp0_OdKuk6JiI2_IiiLN1L7'
+  config.omniauth :google_oauth2, GOOGLE_CLIENT_ID='596815470307-mmnv3ln9hc7lc7gnnrh7n08njrdmjhcm.apps.googleusercontent.com', GOOGLE_CLIENT_SECRET='Atp0_OdKuk6JiI2_IiiLN1L7', {:skip_jwt => true }
 end
