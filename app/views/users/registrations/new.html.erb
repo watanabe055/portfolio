@@ -1,29 +1,51 @@
-<h2>Sign up</h2>
+<div class="big-big2">
+  <div class="big-box">
+    <div class="my-info-box ">
+      <h3 class="ribbon new-room">新規登録</h3>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <!-- 新規登録　入力フォーム -->
+      <%= form_for(resource, as: resource_name, url: users_sign_up_confirm_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", size: "60*60", class: "info-text" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", size: "60*60", class: "info-text" %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", size: "60*60", class: "info-text" %>
+        </div>
+        <div class="my-info-botton">
+          <%= f.submit "登録", class: "btn btn-lg btn-block btn-outline-success" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <!-- SNSログイン -->
+  <div class="log-icon-box">
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <div class="btn-social-long-google">
+        <i class="fab fa-google log-icon"></i><span class="log-logo">Google</span>
+      </div>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <%= link_to user_facebook_omniauth_authorize_path do %>
+      <div class="btn-social-long-facebook">
+        <i class="fab fa-facebook-square log-icon"></i><span class="log-logo">facebook</span>
+      </div>
+    <% end %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= link_to user_line_omniauth_authorize_path do %>
+      <div class="btn-social-long-line">
+        <i class="fab fa-3x fa-line log-icon"></i><span class="log-logo">LINE</span>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

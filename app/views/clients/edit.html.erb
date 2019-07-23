@@ -1,16 +1,18 @@
-<div class="my-info-box ">
-	<h2>プロフィール</h2>
-	<div class="my-info-box">
-		<%= form_for @user,:url => {:action => :update} do |f| %>
-			<h5>ユーザ名</h5>
-			<%= f.text_field :name, placeholder:"2文字以上20文字以内", size: "30*30", class: "info-text"  %>
-			<h5>メールアドレス</h5>
-			<%= f.text_field :email, size: "30*30", class: "info-text" %>
-			<h5>プロフィール画像</h5>
-			<%= f.attachment_field :profile_image, class: "info-text-no"  %>
-			<div class="my-info-botton">
-				<%= f.submit 'Update User' , class: "btn btn-lg btn-block btn-outline-success" %>
-			</div>
-		<% end %>
+<div class="big-box">
+	<div class="my-info-box ">
+		<h3 class="new-room">プロフィール</h3>
+		<div class="my-info-box">
+			<%= form_for @user,:url => {:action => :update} do |f| %>
+				<h5 class="info-subject">ユーザ名</h5>
+				<%= f.text_field :name, placeholder:"2文字以上20文字以内", size: "60*60", class: "info-text"  %>
+				<h5 class="info-subject">メールアドレス</h5>
+				<%= f.text_field :email, size: "60*60", class: "info-text" %>
+				<h5 class="info-subject">プロフィール画像</h5>
+				<%= f.attachment_field :profile_image, class: "info-text-no"  %>
+				<div class="my-info-botton">
+					<%= f.submit 'Update User' , class: "btn btn-lg btn-block btn-outline-success" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -1,0 +1,25 @@
+<div class="big-big3">
+  <div class="big-box">
+    <div class="my-info-box ">
+      <h3 class="ribbon new-room">登録情報確認</h3>
+		<%= form_for @user, url: {action: "complete"} do |f| %>
+			<%= render "devise/shared/error_messages", resource: resource %>
+
+			<div class="field kakunin">
+				<%= f.label :email %>：
+				<%= f.hidden_field :email %>
+				<%= @user.email %>
+			</div>
+			<div class="field kakunin">
+				<%= f.label :password %>：
+				<%= f.hidden_field :password %>
+				<%= @user.password %>
+			</div>
+
+			<div class="my-info-botton">
+				<%= f.submit "確認", class: "btn btn-lg btn-block btn-outline-success" %>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</div>

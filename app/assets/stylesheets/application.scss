@@ -108,3 +108,204 @@ html,body {
 .name{
   font-size: 40px;
 }
+
+/* 未登録時のヘッダー */
+.log-sign{
+  text-align:center;
+  margin-top: 40px;
+}
+
+
+/* ログインSNSアイコン */
+.btn-social-long-facebook {
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 190px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  background: #4966a0;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.btn-social-long-facebook .fa-facebook {
+  text-shadow: 2px 2px 1px #224282;
+  font-size: 30px;
+}
+
+.btn-social-long-facebook span {
+  /*テキスト*/
+  display:inline-block;
+  transition: .5s;
+}
+
+.btn-social-long-facebook:hover span {
+  /*ホバーで一周回転*/
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.btn-social-long-google {
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 190px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  background: #eb5f5d;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.btn-social-long-google .fa-google {
+  text-shadow: 2px 2px 1px #224282;
+  font-size: 30px;
+}
+
+.btn-social-long-google span {
+  /*テキスト*/
+  display:inline-block;
+  transition: .5s;
+}
+
+.btn-social-long-google:hover span {
+  /*ホバーで一周回転*/
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.btn-social-long-line {
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 190px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  background: #93ca76;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.btn-social-long-line .fa-line {
+  text-shadow: 2px 2px 1px #224282;
+  font-size: 30px;
+}
+
+.btn-social-long-line span {
+  /*テキスト*/
+  display:inline-block;
+  transition: .5s;
+}
+
+.btn-social-long-line:hover span {
+  /*ホバーで一周回転*/
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.log-icon{
+  color: #F2F2F2;
+}
+
+.log-logo{
+  color: #F2F2F2;
+  margin-left: 10px;
+}
+
+.log-icon-box{
+  margin-top: 50px;
+  margin-bottom: 300px;
+  text-align: center;
+}
+
+.kakunin{
+  margin: 30px 0;
+}
+
+.info-end{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/*ログイン背景*/
+.big-big1{
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to top, rgba(151, 217, 225, 0.7) 0%, rgba(217, 175, 217, 0.7) 100%),url("guogete-iWnprMqbusU-unsplash.jpg");  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size:  cover;
+}
+
+.big-big2{
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to top, rgba(151, 217, 225, 0.7) 0%, rgba(217, 175, 217, 0.7) 100%),url("oluwakemi-solaja-ZN52ZBFkw4Y-unsplash.jpg");  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size:  cover;
+}
+
+.big-big3{
+  width: 100%;
+  height: 1000px;
+  background: linear-gradient(to top, rgba(43, 192, 228, 0.7) 0%, rgba(234, 236, 198, 0.7) 100%),url("miguel-bruna-DugxtqWvNuI-unsplash.jpg");  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size:  cover;
+}
+
+.big-big4{
+  width: 100%;
+  height: 1000px;
+  background: linear-gradient(to top, rgba(69, 182, 73, 0.7) 0%, rgba(220, 227, 91, 0.7) 100%),url("priscilla-du-preez-XkKCui44iM0-unsplash.jpg");  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size:  cover;
+}
+
+.ribbon {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 30%;
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px;
+  font-size: 25px;/*フォントサイズ*/
+  color: #00a79d;/*フォントカラー*/
+  background: #a4d7e1;/*背景色*/
+}
+
+.ribbon:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.ribbon:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.info-subject{
+  text-align: left;
+  margin-left: 5%;
+}
+
