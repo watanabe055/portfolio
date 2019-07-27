@@ -93,7 +93,30 @@ footer{
 }
 
 .header-items{
-  padding: 10px 0 10px 30px;
+  margin: 10px 0 10px 30px;
+  font-size: 14px;
+}
+
+.cp_link {
+  position: relative;
+  padding: 0.1em 0.3em;
+  display: inline-block;
+  transition: .3s;
+  color: #FFA000;
+}
+.cp_link::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #FFA000;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+.cp_link:hover::after {
+  width: 100%;
 }
 
 .header-itembox{

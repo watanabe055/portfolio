@@ -29,10 +29,26 @@
           <h1 class="header-bar">Let me fill the gap in your soul.</h1>
           <div class="header-itembox col-2">
             <div><span class="name"><%= current_user.name %></span>さん</div>
-            <p class="header-items"><i class="fas fa-2x fa-address-card "></i><%= link_to "マイページ", client_path(current_user.id) %></p>
-            <p class="header-items"><i class="fas fa-2x fa-comments"></i><%= link_to "チャットルーム一覧", rooms_path %></p>
-            <p class="header-items"><i class="fas fa-2x fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-            <p class="header-items"><i class="fas fa-2x fa-folder-plus"></i><%= link_to 'NEW ROOM', new_room_path %></p>
+            <p class="header-items cp_link">
+              <%= link_to client_path(current_user.id) do%>
+                <i class="fas fa-2x fa-address-card "></i>マイページ
+                <% end %>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to rooms_path do %>
+                <i class="fas fa-2x fa-comments"></i>チャットルーム一覧
+                <% end %>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to destroy_user_session_path, method: :delete  do %>
+                <i class="fas fa-2x fa-sign-out-alt"></i>ログアウト
+              <% end %>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to new_room_path do %>
+                <i class="fas fa-2x fa-folder-plus"></i>NEW ROOM
+                <% end %>
+              </p>
           </div>
           <div class="col-10"><%= yield %></div>
 
