@@ -1,40 +1,28 @@
 document.addEventListener 'turbolinks:load', ->
-  App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
-    connected: ->
-      # Called when the subscription is ready for use on the server
+path = window.location.pathname.split('/')
+room_id = path[path.length - 1]
+App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: room_id },
+  connected: ->
 
-    disconnected: ->
-      # Called when the subscription has been terminated by the server
+  disconnected: ->
 
-    received: (data) ->
-      # メッセージをブロードキャストで受け取った時
-      # id=messagesにdata['message']を表示させる
-      show_user = $('#show_user').data('show_user')
-      console.log data['chat_user']
-      console.log show_user
-      if data['chat_user'] == show_user
-        $('#messages').append data['message_right']
-      else
-        $('#messages').append data['message_left']
+# room_channel.rbでブロードキャストされたものがここに届く
+  received: (data) ->
+    $('#messages').append data['message']
 
-    speak: (message)->
-      # メッセージが送信された時
-      # コンシューマになったRoomChannelのspeakアクションが呼ばれる
-      @perform 'speak', message: message
+# これが実行されるとコンシューマになったRoomChannelのspeakアクションが引数`{ message: message }`で実行される
+  speak: (message) ->
+   @perform 'speak', message: message
 
-# Viewの'[data-behavior~=room_speaker]'内のtextを引数に実行される
-# eventはここでは'[data-behavior~=room_speaker]'にあたる
-$(document).on 'keydown', '[data-behavior~=room_speaker]', (event) ->
-  # Ctrl + returnキーを押すとここで上のApp.roomの:speakが呼ばれる
-  if event.ctrlKey && event.keyCode is 13
-    # 引数eventのvalueをspeakアクションに渡す
-    App.room.speak event.target.value
-    # eventのvalueを初期化
-    event.target.value = ''
-    # 中身をsubmitしない
-    event.preventDefault()
+  # data-behaviorがroom_speakerである場所で...
+  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
 
-$(document).on 'click', '.chat_submit', ->
-  App.room.speak $('[data-behavior~=room_speaker]').val()
-  $('[data-behavior~=room_speaker]').val('')
-  event.preventDefault()
+    # keyCodeが13のキー(エンターキー)を押した時...
+    if event.keyCode is 13 # return = send
+
+      # これまでアラートで確認していたようなものがここで実行される
+      App.room.speak event.target.value
+
+      # フォームの中身を空にする
+      event.target.value = ''
+      event.preventDefault()

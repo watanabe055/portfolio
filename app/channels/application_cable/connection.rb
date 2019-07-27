@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 module ApplicationCable
-  # 接続しているユーザー ≒ current_user を定義する
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
 

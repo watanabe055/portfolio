@@ -4,6 +4,7 @@
     <div class="ransack-box">
     	<%= search_form_for @q do |f| %>
         <%= f.search_field :title_or_detail_cont, size: "40px", placeholder: '検索フォーム' %>
+        <!-- 日付検索 -->
         <%= f.label :created_at, '作成日' %>
         <%= f.date_select :created_at_gteq, include_blank: true %>〜
         <%= f.date_select :created_at_lteq, include_blank: true %>
@@ -12,6 +13,7 @@
         </div>
       <% end %>
     </div>
+
     <!-- ransack ソート -->
     <div class="box29">
     <div class="box-title">ソート</div>
@@ -23,14 +25,17 @@
     <!-- チャットルーム一覧 -->
     <% @rooms.each do |room| %>
       <div class="room-box">
-        <p>ルーム：<%= link_to room.title, room_path(room) %></p>
-        <p>内容：<%= room.detail %></p>
-        <p>カテゴリ：<%= room.category %></p>
-        <p>コメント数：<%= room.messages.count %>pt</p>
-        <p>作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <%= link_to room_path(room) do %>
+          <p>ルーム：<%= room.title %></p>
+          <p>内容：<%= room.detail %></p>
+          <p>カテゴリ：<%= room.category %></p>
+          <p>コメント数：<%= room.messages.count %>pt</p>
+          <p>作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <% end %>
       </div>
     <% end %>
   </ul>
+  
   <!-- 戻るボタン -->
   <p id="pageTop"><a href="#"><i class="fas modoru fa-3x fa-arrow-circle-up"></i></a></p>
 </div>
