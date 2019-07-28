@@ -49,7 +49,9 @@ footer{
   height: 70px;
   text-align: center;
   line-height: 8rem;
-  background-color: #ffd19a;
+  background: linear-gradient(45deg, #96f7d2, #f0f696, #fcb1b1);
+  background-size: 600% 600%;
+  animation: AnimationName 5s ease infinite;
   margin-top: auto;
 }
 
@@ -89,7 +91,16 @@ footer{
 .header-bar{
   width: 100%;
   text-align: center;
-  background-color: #ffd19a;
+  display:block;
+  background: linear-gradient(45deg, #96f7d2, #f0f696, #fcb1b1);
+  background-size: 600% 600%;
+  animation: AnimationName 5s ease infinite;
+}
+
+@keyframes AnimationName {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 .header-items{
@@ -291,6 +302,15 @@ html,body {
   width: 100%;
   height: 1000px;
   background: linear-gradient(to top, rgba(69, 182, 73, 0.7) 0%, rgba(220, 227, 91, 0.7) 100%),url("priscilla-du-preez-XkKCui44iM0-unsplash.jpg");  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size:  cover;
+}
+
+.big-big5{
+  width: 100%;
+  height: 1000px;
+  background: linear-gradient(to top, rgba(69, 182, 73, 0.7) 0%, rgba(220, 227, 91, 0.7) 100%),url("robin-worrall-FPt10LXK0cg-unsplash.jpg");  /* 背景画像指定 */
   background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
   background-position: center;    /* 背景の位置指定 */
   background-size:  cover;
