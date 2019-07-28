@@ -8,7 +8,7 @@ App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: roo
 
 # room_channel.rbでブロードキャストされたものがここに届く
   received: (data) ->
-    $('#messages').append data['message']
+    $('#messages').prepend data['message']
 
 # これが実行されるとコンシューマになったRoomChannelのspeakアクションが引数`{ message: message }`で実行される
   speak: (message) ->

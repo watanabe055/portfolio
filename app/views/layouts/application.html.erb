@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Let me fill the gaq in your soul.</title>
+    <title>Empathy With Someone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -14,25 +14,13 @@
       <div class="row  h-100">
         <!-- admin用 -->
         <% if current_user.try(:admin?) %>
-          <h1 class="header-bar">Let me fill the gap in your soul.</h1>
+          <h1 class="header-bar">EWS</h1>
           <div class="header-itembox col-2">
             <div class="header-items"><%= current_user.name %>さん(管理者)</div>
-            <li class="header-items"><%= link_to "管理", rails_admin_path %></li>
-            <li class="header-items"><%= link_to "マイページ", client_path(current_user.id) %></li>
-            <li class="header-items"><%= link_to "チャットルーム一覧", rooms_path %></li>
-            <li class="header-items"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          </div>
-          <div class="col-10"><%= yield %></div>
-
-        <!-- 一般ユーザ -->
-        <% elsif current_user %>
-          <h1 class="header-bar">Let me fill the gap in your soul.</h1>
-          <div class="header-itembox col-2">
-            <div><span class="name"><%= current_user.name %></span>さん</div>
             <p class="header-items cp_link">
-              <%= link_to client_path(current_user.id) do%>
-                <i class="fas fa-2x fa-address-card "></i>マイページ
-                <% end %>
+              <%= link_to rails_admin_path do %>
+                <i class="fas fa-2x fa-users-cog"></i>管理
+              <% end %>
             </p>
             <p class="header-items cp_link">
               <%= link_to rooms_path do %>
@@ -40,15 +28,43 @@
                 <% end %>
             </p>
             <p class="header-items cp_link">
+              <%= link_to client_path(current_user.id) do%>
+                <i class="fas fa-2x fa-address-card "></i>マイページ
+              <% end %>
+            </p>
+            <p class="header-items cp_link">
               <%= link_to destroy_user_session_path, method: :delete  do %>
                 <i class="fas fa-2x fa-sign-out-alt"></i>ログアウト
               <% end %>
             </p>
+          </div>
+          <div class="col-10"><%= yield %></div>
+
+        <!-- 一般ユーザ -->
+        <% elsif current_user %>
+          <h1 class="header-bar">EWS</h1>
+          <div class="header-itembox col-2">
+            <div><span class="name"><%= current_user.name %></span>さん</div>
             <p class="header-items cp_link">
               <%= link_to new_room_path do %>
                 <i class="fas fa-2x fa-folder-plus"></i>NEW ROOM
+              <% end %>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to rooms_path do %>
+                <i class="fas fa-2x fa-comments"></i>チャットルーム一覧
                 <% end %>
-              </p>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to client_path(current_user.id) do%>
+                <i class="fas fa-2x fa-address-card "></i>マイページ
+                <% end %>
+            </p>
+            <p class="header-items cp_link">
+              <%= link_to destroy_user_session_path, method: :delete  do %>
+                <i class="fas fa-2x fa-sign-out-alt"></i>ログアウト
+              <% end %>
+            </p>
           </div>
           <div class="col-10"><%= yield %></div>
 
