@@ -1,28 +1,29 @@
 <div>
-  <ul>
-    <!-- ransack 検索 -->
-    <div class="ransack-box">
-    	<%= search_form_for @q do |f| %>
-        <%= f.search_field :title_or_detail_cont, size: "40px", placeholder: '検索フォーム' %>
-        <!-- 日付検索 -->
-        <%= f.label :created_at, '作成日' %>
-        <%= f.date_select :created_at_gteq, include_blank: true %>〜
-        <%= f.date_select :created_at_lteq, include_blank: true %>
-        <div class="ransack-btn">
-          <%= f.submit "検索", class:"btn btn-block btn-outline-primary rounded-pill" %>
-        </div>
-      <% end %>
-    </div>
+  <!-- ransack 検索 -->
+  <div class="ransack-box">
+  	<%= search_form_for @q do |f| %>
+      <%= f.search_field :title_or_detail_cont, size: "25px", placeholder: "\uf002", class: 'fa' %>
+      <!-- 日付検索 -->
+      <%= f.label :created_at, '作成日' %>
+      <%= f.date_select :created_at_gteq, include_blank: true %>〜
+      <%= f.date_select :created_at_lteq, include_blank: true %>
+      <div class="ransack-btn">
+        <%= f.submit "検索", class:"btn btn-block btn-outline-primary rounded-pill" %>
+      </div>
+    <% end %>
+  </div>
 
-    <!-- ransack ソート -->
-    <div class="box29">
-    <div class="box-title">ソート</div>
+  <!-- ransack ソート -->
+  <div class="box29">
+    <div class="box-title">
+      <p class="box-title2">ソート</p>
       <%= sort_link(@q, :title, "・タイトル") %>
       <%= sort_link(@q, :category, "・カテゴリ") %>
       <%= sort_link(@q, :created_at, '・ルーム作成日') %>
-    </div>
+  </div>
 
-    <!-- チャットルーム一覧 -->
+  <!-- チャットルーム一覧 -->
+  <div class="box-title3">
     <% @rooms.each do |room| %>
       <div class="room-box">
         <%= link_to room_path(room) do %>
@@ -34,8 +35,8 @@
         <% end %>
       </div>
     <% end %>
-  </ul>
-  
+    </div>
+  </div>
   <!-- 戻るボタン -->
   <p id="pageTop"><a href="#"><i class="fas modoru fa-3x fa-arrow-circle-up"></i></a></p>
 </div>
