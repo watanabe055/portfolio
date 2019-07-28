@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  validates :name, presence: true, length: { in: 2..20}, on: :update#更新時のみバリデーション
+
 #SNSでのログイン
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

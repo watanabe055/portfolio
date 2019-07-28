@@ -27,6 +27,7 @@ class ClientsController < ApplicationController
     if @user.update(user_params)
        redirect_to client_path(@user)
 	else
+    flash.now[:notice] = "入力が正しくありません"
 		render 'edit'
 	end
   end
@@ -47,7 +48,7 @@ class ClientsController < ApplicationController
 
 	private
   def user_params
-    params.require(:user).permit(:name, :profile_image, :email)
+    params.require(:user).permit(:name, :profile_image, :email, :introduction)
   end
 
 end
