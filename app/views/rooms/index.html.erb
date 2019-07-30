@@ -31,7 +31,8 @@
           <p>内容：<%= room.detail %></p>
           <p>カテゴリ：<%= room.category %></p>
           <p>コメント数：<%= room.messages.count %>pt</p>
-          <p>作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+          <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+          <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
         <% end %>
       </div>
     <% end %>

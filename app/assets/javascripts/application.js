@@ -15,6 +15,24 @@
   //= require bootstrap-sprockets
   //= require_tree .
   //= require activestorage
-  //= require turbolinks
 
 
+$(function() {
+    var topBtn = $('#pageTop');    
+    topBtn.hide();
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+    //スクロールしてトップ
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});

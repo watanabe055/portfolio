@@ -21,7 +21,9 @@
       <div class="row  h-100">
         <!-- admin用 -->
         <% if current_user.try(:admin?) %>
-          <h1 class="header-bar">EWS</h1>
+          <div class="header-bar">
+            <h1 class="title-name">EWS</h1>
+          </div>
           <div class="header-itembox col-2">
             <div class="header-items"><%= current_user.name %>さん(管理者)</div>
             <p class="header-items cp_link">
@@ -49,7 +51,9 @@
 
         <!-- 一般ユーザ -->
         <% elsif current_user %>
-          <h1 class="header-bar">EWS</h1>
+          <div class="header-bar">
+            <h1 class="title-name">EWS</h1>
+          </div>
           <div class="header-itembox col-2">
             <div><span class="name"><%= current_user.name %></span>さん</div>
             <p class="header-items cp_link">
@@ -80,8 +84,39 @@
           <%= yield %>
         <% end %>
 
+        <!-- admin用 -->
       </div>
     </header>
+    <footer>
+    <% if current_user.try(:admin?) %>
+      <div id="button">footer</div>
+        <div id="container">
+          <div id="cont">
+            <div class="copyright">
+              <p>© 201805 - portfolio</p>
+              <p>© Empathy With Someone</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 一般ユーザ -->
+      <% elsif current_user %>
+      <div id="button">footer</div>
+        <div id="container">
+          <div id="cont">
+            <div class="copyright">
+              <p>© 201805 - portfolio</p>
+              <p>Empathy With Someone</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- 未ログイン -->
+    <% else %>
+    </footer>
   </body>
 </html>
 
