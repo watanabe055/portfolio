@@ -1,0 +1,14 @@
+current directory: /var/www/html/portfolio/vendor/bundle/ruby/2.3/gems/json-1.8.6/ext/json
+/usr/bin/ruby2.3 -r ./siteconf20190729-29070-a17ahu.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/html/portfolio/vendor/bundle/ruby/2.3/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+rm -f .so  *.o  *.bak mkmf.log .*.time
+
+current directory: /var/www/html/portfolio/vendor/bundle/ruby/2.3/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: `all' に対して行うべき事はありません.
+
+current directory: /var/www/html/portfolio/vendor/bundle/ruby/2.3/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
