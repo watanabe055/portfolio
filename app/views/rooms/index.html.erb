@@ -27,6 +27,7 @@
     <% @rooms.each do |room| %>
       <div class="room-box">
         <%= link_to room_path(room) do %>
+          <p><%= time_ago_in_words(room.created_at) %>前</p>
           <p>ルーム：<%= room.title %></p>
           <p>内容：<%= room.detail %></p>
           <p>カテゴリ：<%= room.category %></p>
