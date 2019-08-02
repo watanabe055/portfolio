@@ -3,7 +3,7 @@
 This is application that can chat with asynchronous bidirectional communication.
 
 * Ruby version  
-2.6.3
+2.3.8
 
 * Rails version  
 5.2.3
@@ -12,7 +12,17 @@ This is application that can chat with asynchronous bidirectional communication.
 ActionCable
 
 * Used gem  
-Devise
+devise
+omniauth
+omniauth-facebook
+omniauth-google-oauth2
+omniauth-line
+refile
+ransack
+rails_admin
+cancancan
+rails-i18n', '~> 5.1
+devise-i18n-views
 
 * Branch  
 master: LINE style application  
