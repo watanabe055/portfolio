@@ -8,7 +8,9 @@
 		<h5 class="info-box">自己紹介</h5>
 		<h5 class="my-info"><%= @user.introduction %></h5>
 
+
 		<!-- current_userにしかメールアドレス、編集、退会ボタンを表示させない-->
+
 		<% if @user == current_user %>
 			<h5 class="info-box">メールアドレス</h5>
 			<h5 class="my-info"><%= @user.email %></h5>
