@@ -1,5 +1,5 @@
 <div class="big-box">
-<div class="my-info-box">
+	<div class="my-info-box">
 	<h3 class="new-room">プロフィール</h3>
 	<div class="my-info-box">
 		<%= attachment_image_tag @user,  :profile_image, format: 'jpeg' ,fallback: "/images/noimage.jpeg" , class: "user-image" %>
@@ -8,13 +8,22 @@
 		<h5 class="info-box">自己紹介</h5>
 		<h5 class="my-info"><%= @user.introduction %></h5>
 
-		<!-- current_userにしかメールアドレス、編集、退会ボタンを表示しないため-->
+
+		<!-- current_userにしかメールアドレス、編集、退会ボタンを表示させない-->
+
 		<% if @user == current_user %>
 			<h5 class="info-box">メールアドレス</h5>
 			<h5 class="my-info"><%= @user.email %></h5>
 			<div class="my-info-botton">
-				<%= link_to"ユーザ情報編集", edit_client_path, class: "btn btn-lg btn-block btn-outline-info" %>
-				<%= link_to"退会", destroy_user_session_path, method: :delete, "data-confirm" => "退会しますか？", class: "btn btn-lg btn-block btn-outline-danger"%>
+				<%= link_to edit_client_path, class: "btn btn-lg btn-block btn-outline-success" do %>
+					<i class="fas fa-user-edit"></i>ユーザ情報編集
+				<% end %>
+				<div class="user-btn">
+					<%= link_to destroy_user_session_path, method: :delete, class: "btn btn-lg btn-block btn-outline-info"   do %>
+						<i class="fas fa-sign-out-alt"></i>ログアウト
+					<% end %>
+					<%= link_to"退会", destroy_user_session_path, method: :delete, "data-confirm" => "退会しますか？", class: "btn btn-lg btn-block btn-outline-danger"%>
+				</div>
 			</div>
 		<% end %>
 	</div>
