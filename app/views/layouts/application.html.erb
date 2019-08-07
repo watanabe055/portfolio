@@ -72,10 +72,10 @@
                 <% end %>
             </p>
             <p class="header-items cp_link">
-              <%= link_to destroy_user_session_path, method: :delete  do %>
-                <i class="fas fa-2x fa-sign-out-alt"></i>ログアウト
-              <% end %>
-            </p>
+                <%= link_to homes_help_path do %>
+                  <i class="fas fa-2x fa-question"></i>ヘルプ
+                <% end %>
+              </p>
           </div>
           <div class="col-10"><%= yield %></div>
 
@@ -136,7 +136,6 @@
     label: '🌓', // default: ''
     autoMatchOsTheme: true // default: true
   }
-
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
 </script> -->
