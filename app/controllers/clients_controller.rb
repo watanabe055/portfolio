@@ -26,10 +26,10 @@ class ClientsController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
        redirect_to client_path(@user)
-	else
-    flash.now[:notice] = "入力が正しくありません"
-		render 'edit'
-	end
+  	else
+      flash.now[:notice] = "入力が正しくありません"
+  		render 'edit'
+  	end
   end
 
   def destroy

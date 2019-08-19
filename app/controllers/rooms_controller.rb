@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
 
   def index
-    @room = Room.all.order(id: "DESC")
     @q = Room.ransack(params[:q])
     @rooms = @q.result(distinct: true).order(id: "DESC")
   end

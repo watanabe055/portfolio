@@ -19,7 +19,7 @@
 		  	<%= f.text_area :detail  , class: "info-text"  , size: "70*10" %>
 		  	<h5>カテゴリ<%= f.select :category, Room.categories.keys.to_a, {}, class: "category-box" %></h5>
 		 	<div class="my-info-botton">
-		  		<%= f.submit "Room作成", class: "btn btn-lg btn-block btn-outline-primary" %>
+		  		<%= f.submit "Room作成", class: "btn btn-lg btn-block btn-outline-primary last-btn" %>
 			</div>
 		<% end %>
 	</div>

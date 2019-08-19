@@ -168,8 +168,14 @@ p.kaiwa-text:last-child {
 }
 
 .ransack-btn{
-  text-align: right;
   width: 10%;
+  display: inline-block;
+}
+
+.seach-bar{
+  height: 30px;
+  border-radius: 30px;
+  display: inline-block;
 }
 
 /* ルーム一覧 */
