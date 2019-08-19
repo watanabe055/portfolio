@@ -157,7 +157,7 @@ html,body {
 }
 
 .name{
-  font-size: 40px;
+  font-size: 20px;
 }
 
 /* 未登録時のヘッダー */
@@ -501,4 +501,15 @@ footer .sns .tw {
 
 .foot{
   margin-bottom: 100px;
+}
+
+.loading-now{
+  animation: flowing 2s linear infinite;
+  transform: translateX(100%);
+}
+
+@keyframes flowing {
+  100% {
+    transform: translateX(-100%);
+  }
 }

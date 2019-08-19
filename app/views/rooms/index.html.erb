@@ -2,13 +2,9 @@
   <!-- ransack 検索 -->
   <div class="ransack-box">
   	<%= search_form_for @q do |f| %>
-      <%= f.search_field :title_or_detail_cont, size: "25px", placeholder: "\uf002", class: 'fa' %>
-      <!-- 日付検索 -->
-      <%= f.label :created_at, '作成日' %>
-      <%= f.date_select :created_at_gteq, include_blank: true %>〜
-      <%= f.date_select :created_at_lteq, include_blank: true %>
+      <%= f.search_field :title_or_detail_cont, size: "25px", placeholder: "\uf002", class: 'fa seach-bar' %>
       <div class="ransack-btn">
-        <%= f.submit "検索", class:"btn btn-block btn-outline-primary rounded-pill" %>
+        <%= f.submit "検索", class:"btn btn-outline-primary rounded-pill" %>
       </div>
     <% end %>
   </div>
@@ -16,7 +12,7 @@
   <!-- ransack ソート -->
   <div class="box29">
     <div class="box-title">
-      <p class="box-title2">ソート</p>
+      <p class="box-title2">並び順</p>
       <%= sort_link(@q, :title, "・タイトル") %>
       <%= sort_link(@q, :category, "・カテゴリ") %>
       <%= sort_link(@q, :created_at, '・ルーム作成日') %>
@@ -38,6 +34,7 @@
     <% end %>
     </div>
   </div>
+
   <!-- 戻るボタン -->
   <p id="pageTop"><a href="#"><i class="fas modoru fa-3x fa-arrow-circle-up"></i></a></p>
 </div>
