@@ -68,6 +68,11 @@
                 <% end %>
             </p>
             <p class="header-items cp_link">
+              <%= link_to clients_path do%>
+                <i class="fas fa-2x  fa-users"></i>ユーザ一覧
+              <% end %>
+            </p>
+            <p class="header-items cp_link">
               <%= link_to client_path(current_user.id) do%>
                 <i class="fas fa-2x fa-address-card "></i>マイページ
                 <% end %>
