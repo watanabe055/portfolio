@@ -32,3 +32,41 @@
 .last-btn{
 	margin-bottom: 50px;
 }
+
+.user-list{
+	width: 80%;
+	padding: 0.5em 1em;
+    margin: 1em 0;
+    border: double 5px #4ec4d3;
+    border-radius: 40px;
+    background-color: #4ec4d3;
+}
+
+.users-image{
+	width: 100px;
+	height: 100px;
+	float: left;
+	border-radius: 50%;
+}
+
+.users-info{
+	float: left;
+	margin-left: 5%;
+}
+
+.my-info-s{
+	text-align: left;
+	margin: 10px 0 20px 70px;
+}
+
+.c-btn:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+.hover2:hover{
+  color: #5ab4bd; 
+  background-color: transparent;
+  box-shadow: 0 0 4px 1px rgba(90,180,189,0.5) inset;
+  text-shadow: 1px 1px 2px #fff; 
+}

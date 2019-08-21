@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def index
+    @users =User.order("RANDOM()").all
   end
 
   def edit
@@ -20,6 +21,7 @@ class ClientsController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @message = @user.messages
   end
 
   def update

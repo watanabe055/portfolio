@@ -3,14 +3,39 @@
 	<h3 class="new-room">プロフィール</h3>
 	<div class="my-info-box">
 		<%= attachment_image_tag @user,  :profile_image, format: 'jpeg' ,fallback: "/images/noimage.jpeg" , class: "user-image" %>
+
 		<h5 class="info-box">ユーザ名</h5>
-		<h5 class="my-info"><%= @user.name %></h5>
+		<% if @user.name.nil? == false %>
+			<h5 class="my-info"><%= @user.name %></h5>
+			<% else @user.introduction.nil? == true %>
+			<h5 class="my-info">ユーザ名を登録してください</h5>
+		<% end %>
+
 		<h5 class="info-box">自己紹介</h5>
-		<h5 class="my-info"><%= @user.introduction %></h5>
+		<% if @user.introduction.nil? == true %>
+			<h5 class="my-info">現在未記入です。<br>プロフィール充実させませんか？</h5>
+			<% elsif @user.introduction.length == 0 %>
+				<h5 class="my-info">現在未記入です。<br>プロフィール充実させませんか？</h5>
+			<% else @user.introduction.nil? == false %>
+				<h5 class="my-info"><%= simple_format(@user.introduction) %></h5>
+		<% end %>
+
+		<h5 class="info-box">最終ログイン日時</h5>
+		<% if @user.current_sign_in_at == nil? %>
+			<h5 class="my-info"><%= @user.current_sign_in_at.strftime("%Y-%m-%d") %></h5>
+			<% else %>
+				<h5 class="my-info"><%= @user.created_at.strftime("%Y-%m-%d") %></h5>
+		<% end %>
+
+		<h5 class="info-box">コメント数</h5>
+		<% if @user.messages.count == 0 %>
+			<h5 class="my-info">まだコメントされていません</h5>
+			<% else %>
+				<h5 class="my-info">コメント数は<%= @user.messages.count %>ptです</h5>
+		<% end %>
 
 
 		<!-- current_userにしかメールアドレス、編集、退会ボタンを表示させない-->
-
 		<% if @user == current_user %>
 			<h5 class="info-box">メールアドレス</h5>
 			<h5 class="my-info"><%= @user.email %></h5>
