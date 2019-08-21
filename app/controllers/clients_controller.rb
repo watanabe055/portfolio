@@ -9,7 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @users =User.order("RANDOM()").all
+    @users = User.order("RAND()").all
   end
 
   def edit
