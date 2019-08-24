@@ -24,7 +24,7 @@
       <div class="room-box">
         <%= link_to room_path(room) do %>
           <p>ルーム：<%= room.title %></p>
-          <p>内容：<%= room.detail %></p>
+          <p>内容：<%= truncate(room.detail, length: 20) %></p>
           <p>カテゴリ：<%= room.category %></p>
           <p>コメント数：<%= room.messages.count %>pt</p>
           <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
