@@ -9,31 +9,63 @@
     <% end %>
   </div>
 
-  <!-- ransack ソート -->
-  <div class="box29">
-    <div class="box-title">
-      <p class="box-title2">並び順</p>
-      <%= sort_link(@q, :title, "・タイトル") %>
-      <%= sort_link(@q, :category, "・カテゴリ") %>
-      <%= sort_link(@q, :created_at, '・ルーム作成日') %>
-  </div>
 
-  <!-- チャットルーム一覧 -->
-  <div class="box-title3">
-    <% @rooms.each do |room| %>
-      <div class="room-box">
-        <%= link_to room_path(room) do %>
-          <p>ルーム：<%= room.title %></p>
-          <p>内容：<%= truncate(room.detail, length: 20) %></p>
-          <p>カテゴリ：<%= room.category %></p>
-          <p>コメント数：<%= room.messages.count %>pt</p>
-          <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
-          <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
-        <% end %>
+<div class="cp_tab">
+  <input type="radio" name="cp_tab" id="tab3_1" aria-controls="first_tab03" checked>
+  <label for="tab3_1">チャット一覧</label>
+  <input type="radio" name="cp_tab" id="tab3_2" aria-controls="second_tab03">
+  <label for="tab3_2">オススメ</label>
+  <div class="cp_tabpanels">
+    <div id="first_tab03" class="cp_tabpanel">
+      <h2>チャット一覧</h2>
+        <!-- ransack ソート -->
+      <div class="box29">
+        <div class="box-title">
+          <p class="box-title2">並び順</p>
+          <%= sort_link(@q, :title, "・タイトル") %>
+          <%= sort_link(@q, :category, "・カテゴリ") %>
+          <%= sort_link(@q, :created_at, '・ルーム作成日') %>
       </div>
-    <% end %>
+
+      <!-- チャットルーム一覧 -->
+      <div class="box-title3">
+        <% @rooms.each do |room| %>
+          <div class="room-box">
+            <%= link_to room_path(room) do %>
+              <p>ルーム：<%= room.title %></p>
+              <p>内容：<%= truncate(room.detail, length: 20) %></p>
+              <p>カテゴリ：<%= room.category %></p>
+              <p>コメント数：<%= room.messages.count %>pt</p>
+              <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+              <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div id="second_tab03" class="cp_tabpanel">
+    <h2>オススメ</h2>
+    <!-- チャットルーム一覧 -->
+      <div class="box-title3">
+        <% @random.each do |room| %>
+          <div class="room-box">
+            <%= link_to room_path(room) do %>
+              <p>ルーム：<%= room.title %></p>
+              <p>内容：<%= truncate(room.detail, length: 20) %></p>
+              <p>カテゴリ：<%= room.category %></p>
+              <p>コメント数：<%= room.messages.count %>pt</p>
+              <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+              <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
   <!-- 戻るボタン -->
   <p id="pageTop"><a href="#"><i class="fas modoru fa-3x fa-arrow-circle-up"></i></a></p>
