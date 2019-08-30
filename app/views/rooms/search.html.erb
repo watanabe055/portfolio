@@ -1,0 +1,21 @@
+<div class="search-box">
+	<h2>検索結果</h2>
+	<% if @count == 0 %>
+		<h3 class="search_conut">他のキーワードで検索してみてください</h3>
+
+		<% elsif %>
+		<h3 class="search_conut"><span><%= @count %><span class="search">件ヒットしました</span></h3>
+		<% @rooms.each do |room| %>
+		  <div class="room-box">
+		    <%= link_to room_path(room) do %>
+		      <p>ルーム：<%= room.title %></p>
+		      <p>内容：<%= truncate(room.detail, length: 20) %></p>
+		      <p>カテゴリ：<%= room.category %></p>
+		      <p>コメント数：<%= room.messages.count %>pt</p>
+		      <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+		      <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
+		    <% end %>
+		  </div>
+		<% end %>
+	<% end %>
+</div>

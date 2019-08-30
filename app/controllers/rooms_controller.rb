@@ -3,11 +3,17 @@ class RoomsController < ApplicationController
   def index
     @q = Room.ransack(params[:q])
     @rooms = @q.result(distinct: true).order(id: "DESC")
-    @random = Room.order("RAND()").limit(5)
+    @random = Room.order("RANDOM()").limit(5)
   end
 
   def new
     @room = Room.new
+  end
+
+  def search
+    @q = Room.ransack(params[:q])
+    @rooms = @q.result(distinct: true).order(id: "DESC")
+    @count = @rooms.count
   end
 
   def show
