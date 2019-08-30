@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'homes/about'
   get 'homes/unsubscribe'
   get 'homes/help'
+  get 'rooms/search' => 'rooms#search'
 
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
   get "clients/:id" => "client#show"
