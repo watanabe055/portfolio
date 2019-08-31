@@ -14,9 +14,9 @@
 	<div class="my-info-box ">
 		<%= form_for(@room) do |f| %>
 		  	<h5 class="info-box">タイトル</h5>
-		  	<%= f.text_field :title , class: "info-text" ,size: "70*10",placeholder: '2文字以上' %>
+		  	<%= f.text_field :title , class: "info-text-3", placeholder: '2文字以上' %>
 		  	<h5 class="info-box">説明文</h5>
-		  	<%= f.text_area :detail  , class: "info-text"  , size: "70*10" %>
+		  	<%= f.text_area :detail  , class: "info-text-2" %>
 		  	<h5>カテゴリ<%= f.select :category, Room.categories.keys.to_a, {}, class: "category-box" %></h5>
 		 	<div class="my-info-botton">
 		  		<%= f.submit "Room作成", class: "btn btn-lg btn-block btn-outline-primary last-btn" %>
