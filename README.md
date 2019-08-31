@@ -5,10 +5,6 @@
             ⑵　非同期でのチャット機能の実装
             ⑶　チャットに禁止ワードを設定（死ね、バカ等）
             
-テストユーザ
-   Mail:guest@guest
-   password:aaaaaa
-   
    
 This is application that can chat with asynchronous bidirectional communication.
 
