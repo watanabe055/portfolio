@@ -7,7 +7,7 @@
 		<h5 class="info-box">ユーザ名</h5>
 		<% if @user.name.nil? == false %>
 			<h5 class="my-info"><%= @user.name %></h5>
-			<% else @user.introduction.nil? == true %>
+			<% else @user.name.nil? == true %>
 			<h5 class="my-info">ユーザ名を登録してください</h5>
 		<% end %>
 
