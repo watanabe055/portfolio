@@ -96,7 +96,10 @@ gem 'ransack'
 gem 'chartkick'
 gem 'chartable'
 
+#倫理削除
+gem 'paranoia'
+
 gem 'json'
-gem 'mysql2'
+#gem 'mysql2'
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'unicorn'

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :messages
 
+  acts_as_paranoid
+
   attachment :profile_image
 
   validates :name, presence: true, length: { in: 2..20}, on: :update#更新時のみバリデーション
