@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-  has_many :messages
+  has_many :messages, :dependent => :destroy#退会時コメントも削除
 
   acts_as_paranoid
 

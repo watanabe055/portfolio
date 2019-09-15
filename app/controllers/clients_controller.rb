@@ -35,17 +35,9 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @message =Message.find(params[:id])
-
-    if @message.nil?
-      @user.destroy
-      redirect_to homes_unsubscribe_path
-    else
-      @message.destroy
-      @user.destroy
-      redirect_to homes_unsubscribe_path
-    end
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to homes_unsubscribe_path
   end
 
 	private

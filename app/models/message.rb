@@ -7,6 +7,7 @@ class Message < ApplicationRecord
   # createの後にコミットする { MessageBroadcastJobのperformを遅延実行 引数はself }
   after_create_commit { MessageBroadcastJob.perform_later self }
 
+
   #チャットの禁止ワード
   INVALID_NAME_PARTS = %w(
     ばか
