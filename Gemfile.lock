@@ -70,6 +70,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     cancancan (3.0.1)
@@ -112,6 +115,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
+    faker (2.3.0)
+      i18n (~> 1.6.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
@@ -147,6 +152,9 @@ GEM
     kaminari-activerecord (1.1.1)
       activerecord
       kaminari-core (= 1.1.1)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     kaminari-core (1.1.1)
     kgio (2.11.2)
     listen (3.1.5)
@@ -360,6 +368,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
+  bootstrap-sass
   byebug
   cancancan
   capybara (>= 2.15)
@@ -369,9 +378,12 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n-views
+  faker
   jbuilder (~> 2.5)
   jquery-rails
   json
+  kaminari
+  kaminari-bootstrap
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-facebook

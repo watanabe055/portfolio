@@ -9,7 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @users = User.order("RAND()").all
+    @users = User.order("RAND()").page(params[:page]).per(10)
   end
 
   def edit
