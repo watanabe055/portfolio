@@ -2,7 +2,7 @@
   <!-- ransack 検索 -->
   <div class="ransack-box">
   	<%= search_form_for @q, url: rooms_search_path do |f| %>
-      <%= f.search_field :title_or_detail_cont, size: "25px", placeholder: "\uf002", class: 'fa seach-bar' %>
+      <%= f.search_field :title_or_detail_cont, size: "20px", placeholder: "\uf002" "キーワードを入力", class: 'fa seach-bar' %>
       <div class="ransack-btn">
         <%= f.submit "検索", class:"btn btn-outline-primary rounded-pill" %>
       </div>
@@ -17,7 +17,7 @@
         <%= sort_link(@q, :title, "・タイトル") %>
         <%= sort_link(@q, :category, "・カテゴリ") %>
         <%= sort_link(@q, :created_at, '・ルーム作成日') %>
-    </div>
+      </div>
 
       <!-- チャットルーム一覧 -->
       <div class="box-title3">
@@ -39,7 +39,7 @@
   </div>
 </div>
 <!-- ページネーション -->
-<%= paginate @rooms %>
+<%= paginate @rooms, class: "page" %>
 
   <!-- 戻るボタン -->
   <p id="pageTop"><a href="#"><i class="fas modoru fa-3x fa-arrow-circle-up"></i></a></p>
