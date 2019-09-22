@@ -108,6 +108,6 @@ gem 'bootstrap-sass'
 gem 'faker'
 
 gem 'json'
-#gem 'mysql2'
+gem 'mysql2'
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'unicorn'
