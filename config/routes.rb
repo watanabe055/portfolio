@@ -9,18 +9,19 @@ Rails.application.routes.draw do
 
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
   get "clients/:id" => "client#show"
-  
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+
   devise_scope :user do
     post 'users/sign_up/confirm' => 'users/registrations#confirm'
     post 'users/sign_up/complete' => 'users/registrations#complete'
   end
 
-  resources :rooms, only: [:new,  :show, :index, :create]
-
+  resources :rooms, only: [:new,  :show, :index, :create] do
+    post :confirm, action: :confirm, on: :new
+  end
   root 'homes#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

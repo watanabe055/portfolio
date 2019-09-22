@@ -10,6 +10,11 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
+  def confirm
+    @room = Room.new(room_params)
+    render :new unless @room.valid?
+  end
+
   def search
     @q = Room.ransack(params[:q])
     @rooms = @q.result(distinct: true).order(id: "DESC")
@@ -23,6 +28,11 @@ class RoomsController < ApplicationController
 
   def create
      @room = Room.new(room_params)
+     if params[:back]
+       render :new
+       return
+     end
+
      if @room.save
       redirect_to @room
     else

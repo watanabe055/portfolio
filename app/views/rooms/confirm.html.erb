@@ -1,0 +1,27 @@
+<!-- ルーム作成-->
+<div class="big-box">
+	<h3 class="new-room">ルーム内容の確認</h3>
+	<div class="my-info-box ">
+		<%= form_for @room do |f| %>
+		  	<h5 class="info-box">タイトル</h5>
+        <p>
+          <%= f.hidden_field :title %>
+	  	     <%= @room.title %>
+         </p>
+		  	<h5 class="info-box">説明文</h5>
+        <p>
+          <%= f.hidden_field :detail%>
+	  	     <%= @room.detail %>
+         </p>
+        <h5 class="info-box">カテゴリ</h5>
+        <p>
+		  	   <%= f.hidden_field :category %>
+           <%= @room.category %>
+         </p>
+         <h5 class="confirm-btns">
+	          <%= f.submit "Room作成", class: "btn-confirm-1" %>
+            <%= f.submit '戻る', name: 'back', class: "btn-confirm-2" %>
+        </h5>
+		<% end %>
+	</div>
+</div>
