@@ -12,7 +12,7 @@
 <div class="big-box">
 	<h3 class="new-room">ルーム作成</h3>
 	<div class="my-info-box ">
-		<%= form_for(@room) do |f| %>
+		<%= form_for @room, url: confirm_new_room_path do |f| %>
 		  	<h5 class="info-box">タイトル</h5>
 		  	<%= f.text_field :title , class: "info-text-3", placeholder: '2文字以上' %>
 		  	<h5 class="info-box">説明文</h5>
@@ -20,7 +20,7 @@
         <p class="count "></p><!-- 文字のカウント -->
 		  	<h5>カテゴリ<%= f.select :category, Room.categories.keys.to_a, {}, class: "category-box" %></h5>
 		 	<div class="my-info-botton">
-		  		<%= f.submit "Room作成", class: "btn btn-lg btn-block btn-outline-primary last-btn" %>
+		  		<%= f.submit "確認", class: "btn btn-lg btn-block btn-outline-primary last-btn" %>
 			</div>
 		<% end %>
 	</div>

@@ -418,3 +418,37 @@ p.kaiwa-text:last-child {
   background-color: #f9f6f2;
 
 }
+
+
+/* 確認画面 */
+.btn-confirm-1{
+  width:  40%;
+  height: 40px;
+  margin-bottom: 30px;
+  background-color: #ecf4f3;
+  color: #42b883;
+}
+
+.btn-confirm-1:hover {
+  background-color: #42b883;
+  color: #ecf4f3;
+  letter-spacing: 5px;
+}
+
+.btn-confirm-2{
+  width:  40%;
+  height: 40px;
+  margin-bottom: 30px;
+  background-color: #ecf4f3;
+  color: #3c70a4;
+}
+
+.btn-confirm-2:hover {
+  background-color: #3c70a4;
+  color: #ecf4f3;
+  letter-spacing: 5px;
+}
+
+.confirm-btns{
+  margin-top: 30px;
+}
