@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'homes/unsubscribe'
   get 'homes/help'
   get 'rooms/search' => 'rooms#search'
+  get 'rooms/topic' => 'rooms/topic'
 
   resources :clients, only: [:show, :edit, :update, :index, :destroy]
   get "clients/:id" => "client#show"
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   resources :rooms, only: [:new,  :show, :index, :create] do
     post :confirm, action: :confirm, on: :new
   end
+
   root 'homes#top'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

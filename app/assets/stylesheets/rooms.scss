@@ -453,3 +453,25 @@ p.kaiwa-text:last-child {
 .confirm-btns{
   margin-top: 30px;
 }
+
+
+/*  トピック */
+#topic{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.topic-box{
+  color: #a9eec2;/*文字色*/
+  border: solid 3px #4baea0;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+  margin: 20px;
+  background-color: #b6e6bd;
+}
+
+.topic-box:hover{
+  background-color: #c0ffb3;
+  border: solid 3px #52de97;
+  color: #f1f0cf;
+}
