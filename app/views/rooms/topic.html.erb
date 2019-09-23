@@ -1,0 +1,15 @@
+<div id="topic">
+  <h3>おすすめtopic</h3>
+</div>
+<% @random.each do |room| %>
+  <div class="topic-box">
+    <%= link_to room_path(room) do %>
+      <p>ルーム：<%= room.title %></p>
+      <p>内容：<%= truncate(room.detail, length: 20) %></p>
+      <p>カテゴリ：<%= room.category %></p>
+      <p>コメント数：<%= room.messages.count %>pt</p>
+      <p style="float: left;">作成日：<%= room.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      <p style="text-align:right"><%= time_ago_in_words(room.created_at) %>前</p>
+    <% end %>
+  </div>
+<% end %>
