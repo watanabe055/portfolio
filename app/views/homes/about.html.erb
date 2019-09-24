@@ -1,9 +1,18 @@
 <div class="big-big4">
   	<div class="big-box">
     	<div class="my-info-box">
+
 			<h2 class="new-room">EWSとは</h2>
 			<h4 class="about1">Empathy With Someoneの略で「誰かと共感する」</h4>
 			<h4 class="about2">あなたが思ったことを世界中の人と共有してみませんか？</h4>
+      <div id="btn-login">
+        <h3 id="login-click">こちらから</h3>
+      </div>
+      <div id="login">
+        <h4 id="click-title">簡単登録！</h4>
+        <%= link_to 'ログイン', new_user_session_path, class: "click-start" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "click-start"  %>
+      </div>
 		</div>
 	</div>
 </div>

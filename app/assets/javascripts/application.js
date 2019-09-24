@@ -18,7 +18,7 @@
 
 
 $(function() {
-    var topBtn = $('#pageTop');    
+    var topBtn = $('#pageTop');
     topBtn.hide();
     //スクロールが100に達したらボタン表示
     $(window).scroll(function () {
@@ -35,4 +35,10 @@ $(function() {
         }, 500);
         return false;
     });
+});
+
+$(function() {
+  $('#btn-login').click(function(){
+    $('#login').toggle();
+  });
 });
