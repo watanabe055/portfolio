@@ -45,6 +45,11 @@
                 <% end %>
             </p>
             <p class="header-items cp_link">
+              <%= link_to rooms_topic_path do %>
+                <i class="fas fa-2x fa-chalkboard-teacher"></i>オススメ
+              <% end %>
+            </p>
+            <p class="header-items cp_link">
               <%= link_to clients_path do%>
                 <i class="fas fa-2x  fa-users"></i>ユーザ一覧
               <% end %>
@@ -70,28 +75,32 @@
           </div>
           <div class="header-itembox col-2">
             <div><span class="name"><%= current_user.name %></span>さん</div>
-            <p class="header-items cp_link">
+            <p class="header-items cp_link_1">
               <%= link_to new_room_path do %>
                 <i class="fas fa-2x fa-folder-plus"></i>NEW ROOM
               <% end %>
             </p>
-            <p class="header-items cp_link">
+            <p class="header-items cp_link_1">
               <%= link_to rooms_path do %>
                 <i class="fas fa-2x fa-comments"></i>チャットルーム一覧
-                <% end %>
+              <% end %>
             </p>
-            <p class="header-items cp_link">
+            <p class="header-items cp_link_1">
+              <%= link_to rooms_topic_path do %>
+                <i class="fas fa-2x fa-chalkboard-teacher"></i>オススメ
+              <% end %>
+            </p>
+            <p class="header-items cp_link_1">
               <%= link_to clients_path do%>
                 <i class="fas fa-2x  fa-users"></i>ユーザ一覧
               <% end %>
             </p>
-            <p class="header-items cp_link">
+            <p class="header-items cp_link_2">
               <%= link_to client_path(current_user.id) do%>
                 <i class="fas fa-2x fa-address-card "></i>マイページ
                 <% end %>
             </p>
-            <p class="header-items cp_link">
-
+            <p class="header-items cp_link_2">
                 <%= link_to homes_help_path do %>
                   <i class="fas fa-2x fa-question"></i>ヘルプ
                 <% end %>
