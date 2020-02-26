@@ -182,10 +182,11 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     mustermann (1.0.3)
+    mysql2 (0.5.3)
     nested_form (0.3.2)
     netrc (0.11.0)
     nio4r (2.4.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.1)
       faraday (>= 0.8, < 0.16.0)
@@ -385,6 +386,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap
   listen (>= 3.0.5, < 3.2)
+  mysql2
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
